@@ -1,0 +1,17 @@
+<template>
+    <lightning-layout>
+        <!--lightning-input type="number" name="inputPercentage" label="Enter a number" value={percentValue} ></lightning-input>-->
+        <lightning-layout-item>
+            <lightning-combobox
+                name="progress"
+                label="Status"
+                value={value}
+                placeholder="Select Progress"
+                options={predefinedOptions}
+                onchange={handleChange}>
+            </lightning-combobox>
+            <!--widthStyle value -> {widthStyle}-->
+            <div class="progressBar" style={widthStyle}>{percentValue}</div> 
+        </lightning-layout-item>
+    </lightning-layout>   
+</template>
