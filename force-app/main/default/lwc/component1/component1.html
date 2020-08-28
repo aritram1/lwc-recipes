@@ -1,17 +1,30 @@
 <template>
-    <lightning-layout>
-        <!--lightning-input type="number" name="inputPercentage" label="Enter a number" value={percentValue} ></lightning-input>-->
-        <lightning-layout-item>
-            <lightning-combobox
-                name="progress"
-                label="Status"
-                value={value}
-                placeholder="Select Progress"
-                options={predefinedOptions}
-                onchange={handleChange}>
-            </lightning-combobox>
-            <!--widthStyle value -> {widthStyle}-->
-            <div class="progressBar" style={widthStyle}>{percentValue}</div> 
-        </lightning-layout-item>
-    </lightning-layout>   
+    <lightning-card title="Progress Bar Example">
+        <lightning-layout multiple-rows="true">
+            <!-- Input field to capture Value from UI -->
+            <lightning-layout-item padding="around-small" size=12>
+                <lightning-input type="number" 
+                                 name="inputPercentage" 
+                                 label="Enter a number" 
+                                 value={percentValue}
+                                 onchange={handleChange}
+                                 min=0
+                                 max=100>
+                </lightning-input>
+            </lightning-layout-item> 
+
+            <!-- Output div to show the progress bar by increasing width -->
+            <lightning-layout-item padding="around-small" size=12> 
+                <div class="progressBar" style={widthStyle}>{percentValue}</div> 
+            </lightning-layout-item>
+        </lightning-layout> 
+        <template if:false={error}>
+            <p class="slds-p-horizontal_small">Progress : {percentValue}</p>
+        </template>
+        <p class="slds-p-horizontal_small">Note : Enter 50 for error</p>
+        <template if:true={error}>
+            <p class="slds-p-horizontal_small">Error : {error}</p>
+        </template>
+        <p slot="footer">Lightning Card Footer</p>
+    </lightning-card>  
 </template>
