@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Media Player Parent">
+        <lightning-layout multiple-rows="true">
+            <lightning-layout-item padding="around-small" size=12>
+                <div class="buttons">
+                    <template if:true={playing}>
+                        <lightning-button variant="brand" label="Brand" title="Play" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                    </template>
+                    <template if:false={playing}>
+                        <lightning-button variant="brand" label="Brand" title="Pause" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+                    </template>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item size=12 padding="around-medium">
+                <c-media-player playing={playing}></c-media-player>
+            </lightning-layout-item>
+        </lightning-layout><p slot="footer">Footer : Media Player</p>
+    </lightning-card>  
+</template>
