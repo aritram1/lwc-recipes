@@ -1,8 +1,12 @@
 import { LightningElement } from 'lwc';
 
 export default class Component2 extends LightningElement {
-    playing = false;
+    isPlaying = false;
     handleClick(event){
-        this.playing = this.playing ? false : true;
+        this.isPlaying = this.isPlaying ? false : true;
+    }
+    informParentEvent(event){
+        console.log(`Received from Child : ${event.detail}`);
+        this.isPlaying = event.detail;
     }
 }

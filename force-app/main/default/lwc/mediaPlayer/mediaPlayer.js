@@ -1,11 +1,15 @@
 import { LightningElement, api} from 'lwc';
 
 export default class MediaPlayer extends LightningElement {
-    @api isPlaying = false;
+    @api isplaying = false;
 
     handleClick(event){
         //event.target.value
-        this.isPlaying = this.isPlaying ? false: true;
+        this.isplaying = this.isplaying ? false: true;
+        let informParent = new CustomEvent('informparent', {
+            detail : this.isplaying
+        });
+        this.dispatchEvent(informParent);
     }
 
 }

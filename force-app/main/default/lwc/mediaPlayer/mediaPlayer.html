@@ -1,8 +1,10 @@
 <template>
-    <template if:true={isPlaying}>
-        <lightning-button variant="brand" label="Brand" title="Play" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-    </template>
-    <template if:false={isPlaying}>
-        <lightning-button variant="brand" label="Brand" title="Pause" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
-    </template>
+    <div class="buttons">
+        <template if:true={isplaying}>
+            <lightning-button variant="brand" label="Child Play" title="Play" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </template>
+        <template if:false={isplaying}>
+            <lightning-button variant="brand" label="Child Pause" title="Pause" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+        </template>
+    </div>
 </template>
