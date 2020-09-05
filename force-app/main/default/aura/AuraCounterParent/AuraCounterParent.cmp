@@ -1,0 +1,8 @@
+<aura:component controller="AccountController" implements="flexipage:availableForAllPageTypes" access="global">
+    <aura:attribute name="counter" type="Integer" default="100"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
+    <div>
+        Value : {!v.counter}
+    </div>
+    <c:childcounterlwc value="{!v.counter}"></c:childcounterlwc>
+</aura:component>

@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="To do App">
+        <!-- HEADER -->
+        <div class="slds-grid slds-gutters">
+            <!-- Greetings -->
+            <div class="slds-col slds-size_1-of-2">
+                <c-todo-greeting greeting={greeting}></c-todo-greeting>
+            </div>
+            <!-- Greetings -->
+            <!-- Create a new note -->
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-icon icon-name="utility:connected_apps" size="small" onclick={handleClick}></lightning-icon>
+            </div>
+            <!-- Create a new note -->
+        </div>
+        <!-- HEADER -->
+
+        <!-- BODY -->
+        <div class="slds-grid slds-gutters">
+            <!-- Weather widget-->
+            <div class="slds-col slds-size_1-of-1">
+                Weather
+                <!-- <todo-weather></todo-weather> -->
+            </div>
+            <!-- Weather widget-->
+        </div>
+        <!-- Last 7 days -->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-1">
+                Date range
+                <!-- <todo-date-range> </todo-date-range>-->
+            </div>
+        </div>
+        <!-- Last 7 days -->
+
+        <!-- Activity timeline -->
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_1-of-2">
+                    Activity details
+                    <!--Loop through the entry component -->
+                    <!--<todo-item></todo-item>-->
+            </div>
+        </div>
+        <!-- Activity timeline -->
+
+    </lightning-card>
+</template>
