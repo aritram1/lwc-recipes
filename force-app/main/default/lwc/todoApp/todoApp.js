@@ -1,34 +1,31 @@
 import { LightningElement, track } from 'lwc';
 
 export default class TodoApp extends LightningElement {
-    @track todoObj = {
-        greeting : {},
-        weather: {},
-        dateRange: {},
-        activities: {}
-    }
-    newNote = {};
+    @track greeting = {};
+    @track weather = {};
+    @track dateRange = {};
+    @track activities = {};
+    @track newNote = {};
+    showCreateNoteComponent = false;
     constructor(){
         super();
-        handleGreeting();
-        handleWeather();
-        handleDateRange();
-        handleActivities();
+        this.handleGreeting();
+        // this.handleWeather();
+        // this.handleDateRange();
+        // this.handleActivities();
     }
-    handleNewNote(){
+
+    // Method gets invoked when child component sends the event that a note needs to be created
+    handleCreateNote(event){
         console.log('Inside handleNewNote');
-        this.newNote = this.generateNewNote();
-    }
-    handleCreateNewNote(){
-        console.log('Inside createNode');
-        this.newNote = {
-            message: 'New note created'
-        } 
+        let detail = event.detail;
+        console.log(`The detail received is -> ${JSON.stringify(detail)}`);
+        if(detail) this.showCreateNoteComponent = true;
     }
 
     handleGreeting(){
         console.log('Inside handleGreeting');
-        this.todoObj.greeting = this.generateGreeting();
+        this.greeting = this.generateGreeting();
     }
     generateGreeting(){
         console.log('Inside generateGreeting');
@@ -36,7 +33,7 @@ export default class TodoApp extends LightningElement {
 
     handleWeather(){
         console.log('Inside handleWeather');
-        this.todoObj.weather = this.generateWeather();
+        this.weather = this.generateWeather();
     }
     generateWeather(){
         console.log('Inside generateWeather');
@@ -44,7 +41,7 @@ export default class TodoApp extends LightningElement {
 
     handleDateRange(){
         console.log('Inside handleDateRange');
-        this.todoObj.dateRange = this.generateDateRange();
+        this.dateRange = this.generateDateRange();
     }
     generateDateRange(){
         console.log('Inside generateDateRange');
@@ -52,10 +49,10 @@ export default class TodoApp extends LightningElement {
 
     handleActivities(){
         console.log('Inside handleActivities');
-        this.todoObj.activities = this.generateActivities();
+        this.activities = this.generateActivities();
     }
     generateActivities(){
-
+        
     }
     
 }

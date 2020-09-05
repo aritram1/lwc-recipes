@@ -1,3 +1,10 @@
 <template>
-    {greeting}
+    <div>
+        <!-- Greetings -->
+        <span class="slds-m-around--medium">Good {greeting.time}, {greeting.name}</span>  
+        <!-- Create a new note -->
+        <span class="slds-m-around--small">
+            <lightning-icon icon-name="action:new_note" size="small" onclick={handleClick}></lightning-icon>
+        </span>
+    </div>
 </template>

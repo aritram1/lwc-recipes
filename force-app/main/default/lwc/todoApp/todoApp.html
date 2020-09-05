@@ -1,17 +1,10 @@
 <template>
     <lightning-card title="To do App">
         <!-- HEADER -->
-        <div class="slds-grid slds-gutters">
-            <!-- Greetings -->
-            <div class="slds-col slds-size_1-of-2">
-                <c-todo-greeting greeting={greeting}></c-todo-greeting>
-            </div>
-            <!-- Greetings -->
-            <!-- Create a new note -->
-            <div class="slds-col slds-size_1-of-2">
-                <lightning-icon icon-name="utility:connected_apps" size="small" onclick={handleClick}></lightning-icon>
-            </div>
-            <!-- Create a new note -->
+        <div class="slds-m-around--medium">
+            <!-- Greetings and New Note section-->
+            <c-todo-greeting oncreatenote={handleCreateNote}></c-todo-greeting>
+            <!-- TBD : The new note section -->
         </div>
         <!-- HEADER -->
 
